@@ -1,0 +1,21 @@
+React Key Concepts
+
+React became popular due to these concepts:
+
+- Virtual DOM
+    - React came up with a concept of virtual dom (similar to original dom but made from react components).
+    - Developers just need to let React know how their app looks like (using the state that they define and the components that they build) and React creates a virtual dom using all that information.
+    - React then compares original dom and the virtual dom and only commits to the original dom when there is a difference between the two.
+
+- UI Components
+    - Entire React is based on the idea of building components.
+    - Components are reusable building blocks of UI.
+    - These components are React functions that return JSX.
+    
+- Unidirectional Data Flow
+    - Data flows uni-directionally in React which means that it flows from parent components to child components. 
+    - Any changes in the virtual dom that are caused to the state update are done in a manner in which data always flows downwards from the point of change in the state (affecting that particular component and all its related and child components)
+
+- Just UI, rest is up to you
+    - React is a Library which means that it only lets us build components and all the other things that need to done could be done using other libraries.
+    - React is non-opinionated. 
