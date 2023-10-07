@@ -1,0 +1,19 @@
+React Basics
+
+    - Components
+
+1 - Components
+
+    - Reusable building blocks of UI
+    - React functions that return JSX.
+    - Two types of components
+        - class components
+            - use class syntax to create components that come with various built in methods for different purposes.
+            - import { Component } from "react";
+            - class ComponentName extends Component {
+                render {
+                    return <some jsx>;
+                }
+            }
+            - has built in constructor() that lets us add state to the component.
+        - functional components
