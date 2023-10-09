@@ -1,4 +1,6 @@
 import { Component } from "react";
+import CardList from "./components/card-list/CardList";
+import SearchBox from "./components/search-box/SearchBox";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -40,17 +42,16 @@ class App extends Component {
     const filteredMonsters = monsters.filter((monster) => {
       return monster.name.toLocaleLowerCase().includes(searchField);
     });
+
     return (
       <div className="App">
         <header className="App-header">
-          <input
-            type="search"
-            placeholder="search monster"
-            onChange={onSearchChange}
+          <h1>Monsters Rolodex</h1>
+          <SearchBox
+            onChangeHandler={onSearchChange}
+            placeholderText="search monster"
           />
-          {filteredMonsters.map((monster) => {
-            return <h2 key={monster.id}>{monster.name}</h2>;
-          })}
+          <CardList monsters={filteredMonsters} />
         </header>
       </div>
     );
