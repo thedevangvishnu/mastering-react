@@ -25,9 +25,15 @@ React Basics
                 - setState((state, props) => {}, () => {})
                 - first argument is the "updater function" which also gets state, props as arguments.
                 - second arguments is the "callback function" which only executed after the state update function has ran.
+            - all class components go through three stages:
+                - mounting ----> updating ----> unmounting
 
 
         - Functional components
+            - functions in React that return jsx.
+            - these components do not share the same mental model or stages as the class components and do not life-cycle methods, constructor() or render() methods.
+            - better to keep in mind them as JS functions (keeping in mind the concepts of pure and impure functions)
+                - impure functions: functions that rely or modify anything that is outside the scope of the function.
 
 2 - Mapping arrays in Components
 
