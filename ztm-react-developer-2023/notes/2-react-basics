@@ -6,8 +6,10 @@ React Basics
 
     - Reusable building blocks of UI
     - React functions that return JSX.
-    - Two types of components
-        - class components
+
+    - Two types of components:
+
+        - Class components
             - use class syntax to create components that come with various built in methods for different purposes.
             - import { Component } from "react";
             - class ComponentName extends Component {
@@ -16,4 +18,28 @@ React Basics
                 }
             }
             - has built in constructor() that lets us add state to the component.
-        - functional components
+            - state (which is an object that contains data of our App) can be updated using a setState() that shallow merges and replaces the old object key-value pairs with the new matching key and its corresponding value.
+            - Shallow merge just doesn't care about the type of the values. React replaces even if the values of matching keys are of different types when shallow merging in setState().
+            .setState() is sort of an async call where the updated state value would appear in the next-render.
+            - setState() syntax:
+                - setState((state, props) => {}, () => {})
+                - first argument is the "updater function" which also gets state, props as arguments.
+                - second arguments is the "callback function" which only executed after the state update function has ran.
+
+
+        - Functional components
+
+2 - Mapping arrays in Components
+
+    - Use map() or filter() to render lists/arrays inside components.
+    - Keys:
+        - when rendering lists in React, provide a unique key ("key" attribute) for each list item.
+        - providing a unique key lets React identify that item exactly in case of array modification, insertion or deletion.
+        - never use array "index" as a key. An index associated with one array item changes as soon as that array is modified. Hence, no unique key will be associated with a particular item, making it harder for React to identify changes.
+
+3 - Rendering and Life-cycle methods
+
+    - React offers many methods that can be used for various purposes when a component renders and mounts initially or when it updates. These are called "life cycle" methods.
+    - componentDidMount() is one such method that run when a class component renders and mounts initially. All the code inside componentDidMount(){.....} tells React to do something (like updating) when the component mounts for the first time.
+    - Render cycles for class components:
+        - constructor() ----> render() ----> componentDidMount() ----> render()
