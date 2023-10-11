@@ -43,15 +43,11 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="app-title">Monsters Rolodex</h1>
+        <h1 className="app-title">Monsters Rolodex Practice Project</h1>
         <SearchBox
           className="monsters-search-box"
           onChangeHandler={onSearchChange}
           placeholderText="search monster"
-        />
-        <SearchBox
-          onChangeHandler={onSearchStringChange}
-          placeholderText="search string"
         />
         <CardList monsters={filteredMonsters} />
       </header>
