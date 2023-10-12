@@ -44,6 +44,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h1 className="app-title">Monsters Rolodex Practice Project</h1>
+        <p>This project displays a list of monsters which can be filtered through their names</p>
         <SearchBox
           className="monsters-search-box"
           onChangeHandler={onSearchChange}
