@@ -23,6 +23,10 @@ const SignUp = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -41,9 +45,13 @@ const SignUp = () => {
         displayName,
       });
       console.log("user doc through sign up:", userDocRef);
-      //   console.log(response);
+      resetFormFields();
     } catch (error) {
-      console.log("user creation encountered an error", error);
+      if (error.code === "auth/email-already-in-use") {
+        alert("Cannot create user. Email already in use");
+      } else {
+        console.log("user creation encountered an error", error);
+      }
     }
   };
 
