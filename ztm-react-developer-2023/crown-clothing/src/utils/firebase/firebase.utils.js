@@ -6,10 +6,11 @@ import {
   signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 
-// Your web app's Firebase configuration
+// my web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAw9aAPiyuVLWIRzBQTFg8r2zwwZexU6YM",
   authDomain: "crown-clothing-db-e6138.firebaseapp.com",
@@ -19,7 +20,7 @@ const firebaseConfig = {
   appId: "1:451600980806:web:6192d02ed0428eb904e347",
 };
 
-// Initialize Firebase
+// initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 
 /* ..................................................... */
@@ -50,7 +51,12 @@ export const signInWithGoogleRedirect = () =>
 export const db = getFirestore();
 
 // create a function that creates new user document from authetication
-export const createUserDocumentFromAuth = async (userAuth) => {
+export const createUserDocumentFromAuth = async (
+  userAuth,
+  additionalInfo = {}
+) => {
+  if (!userAuth) return;
+
   const userDocRef = doc(db, "user", userAuth.uid);
   const userSnapShot = await getDoc(userDocRef);
   console.log("userSnapShot", userSnapShot.exists());
@@ -65,6 +71,7 @@ export const createUserDocumentFromAuth = async (userAuth) => {
         displayName,
         email,
         createdAt,
+        ...additionalInfo,
       });
     } catch (error) {
       console.log("error creating the user:", error.message);
@@ -72,6 +79,12 @@ export const createUserDocumentFromAuth = async (userAuth) => {
   }
 
   return userDocRef;
+};
+
+// functionality to create user with email and password
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+  return await createUserWithEmailAndPassword(auth, email, password);
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////
