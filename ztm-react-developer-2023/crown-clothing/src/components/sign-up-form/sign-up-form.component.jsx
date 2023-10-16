@@ -66,7 +66,8 @@ const SignUp = () => {
 
   return (
     <div className="sign-up-container">
-      <h2>This is the Sign Up form</h2>
+      <h2>New to Crown Clothing?</h2>
+      <p>Don't worry! Create a new account</p>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display name"
