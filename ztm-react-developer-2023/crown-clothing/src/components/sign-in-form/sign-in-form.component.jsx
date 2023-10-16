@@ -27,9 +27,10 @@ const SignIn = () => {
   // log google user
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
-    console.log("user", user);
+    // console.log("user", user);
     const userDocRef = await createUserDocumentFromAuth(user);
-    console.log("userDoc:", userDocRef);
+    // console.log("userDoc:", userDocRef);
+    console.log("sign in successful");
   };
 
   // handle form input change
@@ -48,11 +49,20 @@ const SignIn = () => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword();
+      const response = await signInAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
       console.log("sign in successful", response);
       resetFormFields();
     } catch (error) {
-      console.log("error signing in the user", error.message);
+      if (error.code === "auth/invalid-login-credentials") {
+        alert(
+          "Invalid login credentials. Please check your email and/or password"
+        );
+      } else {
+        console.log("error signing in the user", error.message);
+      }
     }
   };
 
@@ -83,7 +93,7 @@ const SignIn = () => {
 
         <div className="buttons-container">
           <Button type="submit">Sign in</Button>
-          <Button buttonType="google" onClick={logGoogleUser}>
+          <Button type="button" buttonType="google" onClick={logGoogleUser}>
             Google sign in
           </Button>
         </div>

@@ -109,7 +109,7 @@ const SignUp = () => {
           onChange={handleChange}
         />
 
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Sign up</Button>
       </form>
     </div>
   );
