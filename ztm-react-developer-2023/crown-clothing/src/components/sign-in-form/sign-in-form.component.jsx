@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import {
   signInWithGooglePopup,
@@ -7,12 +7,9 @@ import {
 } from "../../utils/firebase/firebase.utils";
 
 import FormInput from "../form-input/form-input.component";
-
 import "./sign-in-form.styles.scss";
-
 import Button from "../button/button.component";
-
-import { Form } from "react-router-dom";
+import { UserContext } from "../../contexts/user.context";
 
 const defaultFormFields = {
   email: "",
@@ -24,13 +21,14 @@ const SignIn = () => {
 
   const { email, password } = formFields;
 
+  const { setCurrentUser } = useContext(UserContext);
+
   // log google user
-  const logGoogleUser = async () => {
+  const logInGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
-    // console.log("user", user);
-    const userDocRef = await createUserDocumentFromAuth(user);
-    // console.log("userDoc:", userDocRef);
-    console.log("sign in successful");
+    setCurrentUser(user);
+    await createUserDocumentFromAuth(user);
+    console.log("successfully signed in with google");
   };
 
   // handle form input change
@@ -49,11 +47,12 @@ const SignIn = () => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      const { user } = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log("sign in successful", response);
+      console.log("sign in successful");
+      setCurrentUser(user);
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/invalid-login-credentials") {
@@ -93,7 +92,7 @@ const SignIn = () => {
 
         <div className="buttons-container">
           <Button type="submit">Sign in</Button>
-          <Button type="button" buttonType="google" onClick={logGoogleUser}>
+          <Button type="button" buttonType="google" onClick={logInGoogleUser}>
             Google sign in
           </Button>
         </div>
