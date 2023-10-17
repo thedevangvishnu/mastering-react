@@ -3,12 +3,12 @@
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
-  signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 
@@ -42,10 +42,6 @@ export const auth = getAuth();
 export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
 
-// create a functionality for singing in with redirect
-export const signInWithGoogleRedirect = () =>
-  signInWithRedirect(auth, googleProvider);
-
 /* ..................................................... */
 
 /* 3 - Setting up Firestore database */
@@ -61,7 +57,6 @@ export const createUserDocumentFromAuth = async (
 
   const userDocRef = doc(db, "user", userAuth.uid);
   const userSnapShot = await getDoc(userDocRef);
-  console.log("userSnapShot", userSnapShot.exists());
 
   // create user document if it doesn't exist
   if (!userSnapShot.exists()) {
@@ -97,6 +92,9 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
 // functionality to sign out user
 export const signOutAuthUser = async () => await signOut(auth);
+
+export const onAuthStateChangedHandler = (callback) =>
+  onAuthStateChanged(auth, callback);
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 

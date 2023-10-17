@@ -24,10 +24,8 @@ const SignIn = () => {
   const { setCurrentUser } = useContext(UserContext);
 
   // log google user
-  const logInGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    setCurrentUser(user);
-    await createUserDocumentFromAuth(user);
+  const signInGoogleUser = async () => {
+    await signInWithGooglePopup();
     console.log("successfully signed in with google");
   };
 
@@ -47,12 +45,8 @@ const SignIn = () => {
     event.preventDefault();
 
     try {
-      const { user } = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
+      await signInAuthUserWithEmailAndPassword(email, password);
       console.log("sign in successful");
-      setCurrentUser(user);
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/invalid-login-credentials") {
@@ -67,7 +61,7 @@ const SignIn = () => {
 
   return (
     <div className="sign-up-container">
-      <h2>Already have an account</h2>
+      <h2>Already have an account?</h2>
       <p>Sign in using your email and password or sign in using Google</p>
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -92,7 +86,7 @@ const SignIn = () => {
 
         <div className="buttons-container">
           <Button type="submit">Sign in</Button>
-          <Button type="button" buttonType="google" onClick={logInGoogleUser}>
+          <Button type="button" buttonType="google" onClick={signInGoogleUser}>
             Google sign in
           </Button>
         </div>
