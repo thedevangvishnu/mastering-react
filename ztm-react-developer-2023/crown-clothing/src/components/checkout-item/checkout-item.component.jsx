@@ -3,7 +3,12 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/cart.context";
 
 const CheckoutItem = ({ cartItem }) => {
-  const { clearItemFromCart } = useContext(CartContext);
+  const { clearItemFromCart, addItemToCart, removeItemFromCart } =
+    useContext(CartContext);
+
+  const removeItemHandler = () => removeItemFromCart(cartItem);
+  const addItemHandler = () => addItemToCart(cartItem);
+  const clearItemHandler = () => clearItemFromCart(cartItem);
 
   const { name, imageUrl, price, quantity } = cartItem;
   return (
@@ -12,12 +17,20 @@ const CheckoutItem = ({ cartItem }) => {
         <img src={imageUrl} alt={`${name}`} />
       </div>
       <span className="name">{name}</span>
-      <span className="quantity">{quantity}</span>
+      <span className="quantity">
+        <div className="arrow" onClick={removeItemHandler}>
+          &#10094;
+        </div>
+        <span className="value">{quantity}</span>
+        <div className="arrow" onClick={addItemHandler}>
+          &#10095;
+        </div>
+      </span>
       <span className="price">{`$${price}`}</span>
       <div
         className="remove-button"
         title="Remove item"
-        onClick={() => clearItemFromCart(cartItem)}
+        onClick={clearItemHandler}
       >
         &#10005;
       </div>
