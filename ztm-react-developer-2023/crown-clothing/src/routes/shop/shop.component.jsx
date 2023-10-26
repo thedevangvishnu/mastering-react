@@ -9,7 +9,7 @@ const Shop = () => {
   return (
     <Fragment>
       {Object.keys(categoriesMap).map((title) => (
-        <Fragment>
+        <Fragment key={title}>
           <h2>{title}</h2>
           <div className="products-container">
             {categoriesMap[title].map((product) => {
