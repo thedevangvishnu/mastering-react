@@ -1,0 +1,14 @@
+.checkbox__container {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.checkbox__container input {
+  cursor: pointer;
+}
+
+.checkbox__container label {
+  color: #ddd;
+  cursor: pointer;
+}

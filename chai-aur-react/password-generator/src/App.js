@@ -51,39 +51,50 @@ function App() {
   }, [length, numbersIncluded, charactersIncluded, passwordGenerator]);
 
   return (
-    <div className="App">
-      <h2>Password generator</h2>
-      <input type="text" value={password} readOnly />
+    <div className="app__container">
+      <h2 className="header">Password generator</h2>
+      <div className="password__container">
+        <input
+          className="password__input"
+          type="text"
+          value={password}
+          readOnly
+        />
 
-      <button onClick={copyPasswordToClipboard}>{buttonText}</button>
-      <br />
+        <button className="copy__btn" onClick={copyPasswordToClipboard}>
+          {buttonText}
+        </button>
+      </div>
 
-      <input
-        type="range"
-        min={8}
-        max={50}
-        value={length}
-        onChange={lengthChangeHandler}
-      />
-      <label>Length: {length}</label>
-      <br />
+      <div className="length__container">
+        <input
+          type="range"
+          min={8}
+          max={50}
+          value={length}
+          onChange={lengthChangeHandler}
+        />
+        <label>Length: {length}</label>
+      </div>
 
-      <CheckboxInput
-        id="numbers"
-        value={numbersIncluded}
-        onChange={numbersToggleHandler}
-        label="Numbers"
-        htmlFor="numbers"
-      />
+      <div className="checkboxes__container">
+        <CheckboxInput
+          id="numbers"
+          value={numbersIncluded}
+          onChange={numbersToggleHandler}
+          label="Numbers"
+          htmlFor="numbers"
+        />
 
-      <CheckboxInput
-        id="characters"
-        type="checkbox"
-        value={charactersIncluded}
-        onChange={charactersChangeHandler}
-        label="Characters"
-        htmlFor="characters"
-      />
+        <CheckboxInput
+          id="characters"
+          type="checkbox"
+          value={charactersIncluded}
+          onChange={charactersChangeHandler}
+          label="Characters"
+          htmlFor="characters"
+        />
+      </div>
     </div>
   );
 }
