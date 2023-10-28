@@ -10,14 +10,17 @@ function App() {
 
   const lengthChangeHandler = (event) => {
     setLength(event.target.value);
+    setButtonText("COPY");
   };
 
   const numbersToggleHandler = (event) => {
     setNumbersIncluded((numIncluded) => !numIncluded);
+    setButtonText("COPY");
   };
 
   const charactersChangeHandler = (event) => {
     setCharactersIncluded((charIncluded) => !charIncluded);
+    setButtonText("COPY");
   };
 
   const passwordRef = useRef(null);
@@ -39,6 +42,7 @@ function App() {
 
   const copyPasswordToClipboard = useCallback(() => {
     window.navigator.clipboard.writeText(password);
+    setButtonText("COPIED");
   }, [password]);
 
   useEffect(() => {
