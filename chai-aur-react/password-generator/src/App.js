@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState, useEffect, useCallback, useRef } from "react";
+import CheckboxInput from "./components/checkbox-input/checkbox-input.component";
 
 function App() {
   const [length, setLength] = useState(8);
@@ -64,25 +65,25 @@ function App() {
         value={length}
         onChange={lengthChangeHandler}
       />
-      <label htmlFor="">Length: {length}</label>
+      <label>Length: {length}</label>
       <br />
 
-      <input
+      <CheckboxInput
         id="numbers"
-        type="checkbox"
         value={numbersIncluded}
         onChange={numbersToggleHandler}
+        label="Numbers"
+        htmlFor="numbers"
       />
-      <label htmlFor="numbers">Numbers</label>
-      <br />
 
-      <input
+      <CheckboxInput
         id="characters"
         type="checkbox"
         value={charactersIncluded}
         onChange={charactersChangeHandler}
+        label="Characters"
+        htmlFor="characters"
       />
-      <label htmlFor="characters">Characters</label>
     </div>
   );
 }
