@@ -1,5 +1,5 @@
 import "./App.css";
-import Setup from "./subtopics/1-responding-to-events/4-event-propagation";
+import Setup from "./subtopics/2-state/5-fix-stuck-inputs";
 
 function App() {
   return (
