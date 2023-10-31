@@ -1,44 +1,35 @@
-import { ReactComponent as BgHeader } from "./assets/images/bg-pattern-card.svg";
+import React from "react";
+import ProfileCard from "./components/profile-card/ProfileCard.component";
+import imagePath from "./assets/images/image-victor.jpg";
+import bgPatternTop from "./assets/images/bg-pattern-top.svg";
+import bgPatternBottom from "./assets/images/bg-pattern-bottom.svg";
 
-import profileImage from "./assets/images/image-victor.jpg";
+const userProfile = {
+  profileImage: imagePath,
+  name: "Victor Crest",
+  age: 26,
+  city: "London",
+  followers: "80K",
+  likes: "804K",
+  photos: "1.4K",
+};
 
 const App = () => {
   return (
-    <div className="bg-darkCyan h-screen w-full flex justify-center items-center">
-      <div className="w-76 h-100% bg-slate-50 rounded-2xl flex flex-col items-center ">
-        <div className="w-fit rounded-t-2xl overflow-hidden">
-          <BgHeader className="w-full" />
-        </div>
-        <img
-          className="w-28 -m-16 rounded-full border-4 border-solid border-slate-100"
-          src={profileImage}
-          alt="Victor profile"
-        />
-        <div className="mt-20 flex items-center gap-2">
-          <h2 className="font-bold text-desaturatedBlue text-lg">
-            Victor Crest
-          </h2>
-          <span className="text-grayishBlue">26</span>
-        </div>
-        <p className="text-grayishBlue text-sm mb-6">London</p>
-
-        <div className="border-t-2 py-6 flex items-center justify-between w-full px-8">
-          <div className="flex flex-col items-center">
-            <p className="font-bold text-desaturatedBlue text-lg">80K</p>
-            <p className="text-xs text-grayishBlue tracking-widest">
-              Followers
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <p className="font-bold text-desaturatedBlue text-lg">803K</p>
-            <p className="text-xs text-grayishBlue tracking-widest">Likes</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <p className="font-bold text-desaturatedBlue text-lg">1.4k</p>
-            <p className="text-xs text-grayishBlue tracking-widest">Photos</p>
-          </div>
-        </div>
+    <div className="bg-darkCyan h-screen w-full relative overflow-hidden">
+      <img
+        src={bgPatternTop}
+        alt=""
+        className="absolute xs:top-[-10%] xs:left-[-15%] xs:w-3/4 sm:top-[-20%] sm:left-[-10%] lg:top-[-60%] lg:left-[-10%] w-3/5 "
+      />
+      <div className="h-screen w-full flex justify-center items-center relative z-10">
+        <ProfileCard profile={userProfile} />
       </div>
+      <img
+        src={bgPatternBottom}
+        alt=""
+        className="absolute xs:bottom-[-10%] xs:right-[-20%] xs:w-3/4 sm:bottom-[-20%] sm:right-[-20%] lg:bottom-[-90%] lg:right-[-10%] w-3/5"
+      />
     </div>
   );
 };
