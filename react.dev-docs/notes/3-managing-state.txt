@@ -1,0 +1,35 @@
+MANAGING STATES 
+
+1 - Reacting to inputs with state
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+1 - Reacting To Inputs with State
+
+1.1 - Imperative vs Declarative programming
+
+- Imperative:
+    - giving exact instructions for manipulating UI elements.
+    - more confusions and bugs because of catering for large numbers of changes based on many user interactions.
+    - similar to "giving exact directions to the driver instead of letting him know the destination."
+- Declarative: 
+    - only giving the instruction of what the final UI looks like in each scenario.
+    - react figures out how and when to manipulate UI based on user interactions.
+    - similar to "booking destination through Uber (letting the driver know what the final output looks like) and letting the driver take you."
+
+1.2 - How to change UI declaratively 
+
+Five step procedure:
+
+- Determine all different visual states of the component.
+- Determine human and computer inputs that can trigger state update.
+    - human inputs: clicking a button, typing in an input, scrolling, etc.
+    - computer inputs: network response arriving, timeout completing, image loading. etc.
+- Represent these states in memory using useState().
+- Get rid of non-essential and redundant state variables.
+    - remove state variables that are paradoxical. Confine them more.
+    - remove state variables whose information are already contained in the other variable.
+    - remove those state variables whose value are just inverse of another state variable. Use one of them only.
+- Connect the event handlers to state setter funtions for their respective state variables. 
+
