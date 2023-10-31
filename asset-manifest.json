@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/mastering-react/react-practice-projects/newbie/project-01/static/css/main.cd53ee25.css",
+    "main.js": "/mastering-react/react-practice-projects/newbie/project-01/static/js/main.05081136.js",
+    "static/js/787.b02e6055.chunk.js": "/mastering-react/react-practice-projects/newbie/project-01/static/js/787.b02e6055.chunk.js",
+    "static/media/bg-pattern-card.svg": "/mastering-react/react-practice-projects/newbie/project-01/static/media/bg-pattern-card.b61daebd3cb4b885d10fd683755d49bb.svg",
+    "index.html": "/mastering-react/react-practice-projects/newbie/project-01/index.html",
+    "static/media/bg-pattern-bottom.svg": "/mastering-react/react-practice-projects/newbie/project-01/static/media/bg-pattern-bottom.a34eb319c02ad49587c339df93212a6e.svg",
+    "static/media/bg-pattern-top.svg": "/mastering-react/react-practice-projects/newbie/project-01/static/media/bg-pattern-top.dae77b1febf9b29fe34ed57eba86693f.svg",
+    "main.cd53ee25.css.map": "/mastering-react/react-practice-projects/newbie/project-01/static/css/main.cd53ee25.css.map",
+    "main.05081136.js.map": "/mastering-react/react-practice-projects/newbie/project-01/static/js/main.05081136.js.map",
+    "787.b02e6055.chunk.js.map": "/mastering-react/react-practice-projects/newbie/project-01/static/js/787.b02e6055.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd53ee25.css",
+    "static/js/main.05081136.js"
+  ]
+}
