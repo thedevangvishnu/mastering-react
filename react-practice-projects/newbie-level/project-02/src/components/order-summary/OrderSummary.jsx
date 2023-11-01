@@ -1,5 +1,5 @@
-import heroImage from "../../../assets/images/illustration-hero.svg";
-import musicIcon from "../../../assets/images/icon-music.svg";
+import heroImage from "../../assets/images/illustration-hero.svg";
+import musicIcon from "../../assets/images/icon-music.svg";
 
 const OrderSummary = () => {
   return (
