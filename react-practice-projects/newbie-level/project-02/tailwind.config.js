@@ -16,6 +16,9 @@ module.exports = {
         desaturatedBlue: "hsl(224, 23%, 55%)",
         darkBlue: "hsl(223, 47%, 23%)",
       },
+      fontSize: {
+        xxs: "0.7rem",
+      },
     },
   },
   plugins: [],
