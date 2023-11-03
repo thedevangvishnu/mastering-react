@@ -1,5 +1,5 @@
 import "./subtopics/global.css";
-import Setup from "./subtopics/2-choosing-the-state-structure/4-avoid-contradictions-right";
+import Setup from "./subtopics/2-choosing-the-state-structure/4-non-contradictory-states";
 
 const App = () => {
   return (
