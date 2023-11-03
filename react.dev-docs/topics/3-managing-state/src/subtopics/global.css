@@ -110,3 +110,25 @@ input::placeholder {
   color: rgb(206, 23, 23);
   font-weight: 600;
 }
+
+/* 2 - choosing state structure */
+
+/* 2.1 - movingDot */
+.dot__container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.moving__dot {
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(250, 34, 34);
+  border-radius: 50%;
+}
