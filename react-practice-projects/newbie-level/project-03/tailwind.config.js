@@ -11,15 +11,27 @@ module.exports = {
       },
       colors: {
         // primary
-        lightRed: "hsl(0, 100%, 67%)",
-        orangeyYellow: "hsl(39, 100%, 56%)",
-        greenTeal: "hsl(166, 100%, 37%)",
-        cobaltBlue: "hsl(234, 85%, 45%)",
+        lightRed: {
+          100: "hsl(0, 100%, 67%, 0.1)",
+          200: "hsl(0, 100%, 67%)",
+        },
+        orangeyYellow: {
+          100: "hsl(39, 100%, 56%, 0.1)",
+          200: "hsl(39, 100%, 56%)",
+        },
+        greenTeal: {
+          100: "hsl(166, 100%, 37%, 0.1)",
+          200: "hsl(166, 100%, 37%)",
+        },
+        cobaltBlue: {
+          100: "hsl(234, 85%, 45%, 0.1)",
+          200: "hsl(234, 85%, 45%)",
+        },
         // background
         lightSlateBlue: "hsl(252, 100%, 67%) ",
         lightRoyalBlue: "hsl(241, 81%, 54%)",
         // circle
-        violeyBlue: "hsla(256, 72%, 46%, 1)",
+        violetBlue: "hsla(256, 72%, 46%, 1)",
         persianBlue: "hsla(241, 72%, 46%, 0)",
         // neutral
         white: "hsl(0, 0%, 100%)",
