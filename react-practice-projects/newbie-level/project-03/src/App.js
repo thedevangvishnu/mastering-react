@@ -1,7 +1,4 @@
-import reactionIcon from "./assets/images/icon-reaction.svg";
-import memoryIcon from "./assets/images/icon-memory.svg";
-import verbalIcon from "./assets/images/icon-verbal.svg";
-import visualIcon from "./assets/images/icon-visual.svg";
+import Summary from "./components/summary/Summary";
 
 const App = () => {
   return (
@@ -33,47 +30,7 @@ const App = () => {
         <div className="w-1/2 flex flex-col items-start py-5 px-6 gap-3 relative">
           <h3 className="text-darkGrayBlue font-bold text-md">Summary</h3>
           {/* summary items */}
-          <div className="flex flex-col gap-2 w-full">
-            <div className="flex items-center p-3  bg-lightRed-100 rounded-md">
-              <img src={reactionIcon} alt="Reaction icon" className="w-4" />
-              <h4 className="text-lightRed-200 font-bold text-xs ml-1">
-                Reaction
-              </h4>
-              <p className="text-xs ml-auto text-darkGrayBlue">
-                <span className="font-semibold">80 </span>/100
-              </p>
-            </div>
-
-            <div className="flex items-center p-3  bg-orangeyYellow-100 rounded-md">
-              <img src={memoryIcon} alt="memory icon" className="w-4" />
-              <h4 className="text-orangeyYellow-200 font-bold text-xs ml-1">
-                Memory
-              </h4>
-              <p className="text-xs ml-auto text-darkGrayBlue">
-                <span className="font-semibold">92 </span>/100
-              </p>
-            </div>
-
-            <div className="flex items-center p-3  bg-greenTeal-100 rounded-md">
-              <img src={verbalIcon} alt="Verbal icon" className="w-4" />
-              <h4 className="text-greenTeal-200 font-bold text-xs ml-1">
-                Verbal
-              </h4>
-              <p className="text-xs ml-auto text-darkGrayBlue">
-                <span className="font-semibold">61 </span>/100
-              </p>
-            </div>
-
-            <div className="flex items-center p-3  bg-cobaltBlue-100 rounded-md">
-              <img src={visualIcon} alt="Visual icon" className="w-4" />
-              <h4 className="text-cobaltBlue-200 font-bold text-xs ml-1">
-                Visual
-              </h4>
-              <p className="text-xs ml-auto text-darkGrayBlue">
-                <span className="font-semibold">72 </span>/100
-              </p>
-            </div>
-          </div>
+          <Summary />
 
           <button className="py-3 text-xs text-white  bg-darkGrayBlue w-full rounded-3xl mt-3 tracking-wider font-semibold">
             Continue

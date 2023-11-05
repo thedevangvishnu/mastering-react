@@ -21,8 +21,8 @@ const summaryList = [
   {
     name: "Verbal",
     score: 61,
-    image: "greenTeal-100",
-    bgColor: verbalIcon,
+    image: verbalIcon,
+    bgColor: "greenTeal-100",
     textColor: "greenTeal-200",
   },
   {
