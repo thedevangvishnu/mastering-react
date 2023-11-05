@@ -1,4 +1,4 @@
-import Summary from "./components/summary/Summary";
+import SummaryItems from "./components/summary-items/SummaryItems";
 
 const App = () => {
   return (
@@ -30,7 +30,7 @@ const App = () => {
         <div className="w-1/2 flex flex-col items-start py-5 px-6 gap-3 relative">
           <h3 className="text-darkGrayBlue font-bold text-md">Summary</h3>
           {/* summary items */}
-          <Summary />
+          <SummaryItems />
 
           <button className="py-3 text-xs text-white  bg-darkGrayBlue w-full rounded-3xl mt-3 tracking-wider font-semibold">
             Continue
