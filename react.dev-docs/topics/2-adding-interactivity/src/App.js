@@ -1,5 +1,5 @@
 import "./App.css";
-import Setup from "./subtopics/2-state/5-fix-stuck-inputs";
+import Setup from "./subtopics/4-state-as-a-snapshot/1-counter1";
 
 function App() {
   return (
