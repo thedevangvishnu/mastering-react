@@ -142,3 +142,18 @@ Components as chefs in the kitchen and React as the waiter taking orders from th
     - It doesn't touch the actual DOM if the rendering result is same as the last time.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+4 - State as a snapshot
+
+    - Setting state requests a new render.
+    
+    - Rendering a component (calling the functional component in React) returns the jsx which was stored as a snapshot of UI in that particular time (in that particular render). 
+        - This "snapshot" contains all local variables, event handlers and state variables.
+        - This JSX is "interactive" as it contains logic for what would happen in response to user interactions.
+        - "Event handlers and state variable values are fixed based on the snapshot calculated from the state of that particular render.
+        - These values change once React takes another snapshot, when the state variable updates in new renders.
+    
+    - A state variable's value never changes in the same render. It only updates in the next render (even if it is followed by async code).
+    
+    - Use "substitution method" in code when this concept gets confusing.
