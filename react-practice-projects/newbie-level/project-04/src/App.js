@@ -1,5 +1,7 @@
+import SocialProofSection from "./components/social-proof-section/SocialProofSection";
+
 const App = () => {
-  return <h1 className="text-center text-4xl">Project 04</h1>;
+  return <SocialProofSection />;
 };
 
 export default App;
