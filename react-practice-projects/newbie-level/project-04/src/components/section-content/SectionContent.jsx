@@ -1,8 +1,9 @@
 import Rating from "../rating/Rating";
+import ReviewCard from "../review-card/ReviewCard";
 
 const SectionContent = () => {
   return (
-    <div className="w-full h-screen relative flex flex-col gap-2 p-28 font-display">
+    <div className="w-full h-screen relative flex flex-col gap-10 px-32 py-16 font-display">
       {/* upper section */}
       <div className="w-full flex">
         {/* upper left */}
@@ -26,6 +27,9 @@ const SectionContent = () => {
       </div>
 
       {/* lower section */}
+      <div>
+        <ReviewCard />
+      </div>
     </div>
   );
 };
