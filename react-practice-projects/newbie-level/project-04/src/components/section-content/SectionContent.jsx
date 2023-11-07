@@ -1,5 +1,6 @@
 import Rating from "../rating/Rating";
 import ReviewCard from "../review-card/ReviewCard";
+import { reviews } from "../../assets/reviews";
 
 const SectionContent = () => {
   return (
@@ -27,8 +28,10 @@ const SectionContent = () => {
       </div>
 
       {/* lower section */}
-      <div>
-        <ReviewCard />
+      <div className="flex gap-10 w-full">
+        {reviews.map((reviewItem) => (
+          <ReviewCard key={reviewItem.id} reviewItem={reviewItem} />
+        ))}
       </div>
     </div>
   );

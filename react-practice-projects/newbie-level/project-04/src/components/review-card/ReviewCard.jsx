@@ -1,8 +1,10 @@
 import photo from "../../assets/images/image-colton.jpg";
 
-const ReviewCard = ({ image, name, review }) => {
+const ReviewCard = ({ reviewItem }) => {
+  const { image, name, review } = reviewItem;
+
   return (
-    <div className="w-80 h-48 flex flex-col gap-4 p-6 bg-magenta-300 rounded-lg">
+    <div className="w-80 h-52 flex flex-col gap-4 px-9 py-8 bg-magenta-300 rounded-lg">
       <div className="flex gap-5 items-center">
         <img
           src={image}
@@ -14,7 +16,7 @@ const ReviewCard = ({ image, name, review }) => {
           <p className="text-softPink -mt-1">Verified Buyer</p>
         </div>
       </div>
-      <p className="text-magenta-100 text-sm">{review}</p>
+      <p className="text-magenta-100 text-sm ">"{review}"</p>
     </div>
   );
 };
