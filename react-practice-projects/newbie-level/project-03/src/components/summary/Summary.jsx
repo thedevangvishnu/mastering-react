@@ -2,7 +2,7 @@ import SummaryItems from "../summary-items/SummaryItems";
 
 const Summary = () => {
   return (
-    <div className="w-1/3 h-3/5 bg-white rounded-2xl relative shadow-2xl flex">
+    <div className=" h-3/5 w-1/3 bg-white rounded-2xl relative shadow-2xl flex">
       {/* left seciton */}
       <div className="w-1/2 h-full bg-gradient-to-b from-lightSlateBlue to-lightRoyalBlue rounded-2xl flex flex-col items-center gap-7 text-center py-5 px-6">
         <h3 className="text-lightLavender font-semibold">Your Result</h3>
