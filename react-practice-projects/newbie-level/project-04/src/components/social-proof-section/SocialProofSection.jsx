@@ -4,7 +4,7 @@ import SectionContent from "../section-content/SectionContent";
 
 const SocialProofSection = () => {
   return (
-    <div className="xs:w-full w-screen h-screen relative flex flex-col items-center justify-center">
+    <div className="xs:w-full md:w-full md:h-screen relative flex flex-col items-center justify-center">
       {/* top left background */}
       <img
         src={topBackground}

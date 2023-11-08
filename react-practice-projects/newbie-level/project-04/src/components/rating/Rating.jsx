@@ -28,17 +28,22 @@ const Rating = ({ margin }) => {
 
   return (
     <div
-      className={`bg-magenta-100 xs:flex-col flex flex-row items-center xs:p-4 p-3 relative xs:gap-2 gap-8 xs:w-full w-3/4 rounded-lg`}
+      className={`bg-magenta-100 xs:flex-col flex md:flex-row items-center xs:p-4 md:p-3 relative xs:gap-2 md:gap-4 lg:gap-6 xl:gap-10 xs:w-full md:w-3/4 rounded-md`}
       style={marginLeft}
     >
       <div className="flex items-center gap-1 h-full">
         {Array(5)
           .fill(null)
           .map((_, index) => (
-            <img key={index} src={star} alt="Star icon to display rating" />
+            <img
+              key={index}
+              src={star}
+              alt="Star icon to display rating"
+              className="md:w-3 lg:w-full"
+            />
           ))}
       </div>
-      <p className=" text-lg text-magenta-300 font-semibold">
+      <p className="md:text-sm lg:text-base text-magenta-300 font-semibold">
         Rated 5 stars in Reviews
       </p>
     </div>

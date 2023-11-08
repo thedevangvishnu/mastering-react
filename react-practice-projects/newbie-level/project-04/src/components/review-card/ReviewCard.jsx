@@ -4,7 +4,7 @@ const ReviewCard = ({ reviewItem }) => {
   const { image, name, review } = reviewItem;
 
   return (
-    <div className="w-80 h-52 flex flex-col gap-4 px-9 py-8 bg-magenta-300 rounded-lg">
+    <div className="xs:w-11/12 md:w-72 lg:w-80 h-52 flex flex-col xs:gap-6 md:gap-2 lg:gap-4 xs:px-8 md:px-4 lg:px-9 xs:py-8 md:py-6 lg:py-8 bg-magenta-300 rounded-lg justify-center ">
       <div className="flex gap-5 items-center">
         <img
           src={image}
