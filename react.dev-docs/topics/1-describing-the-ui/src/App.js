@@ -1,4 +1,4 @@
-import Setup from "./subtopics/7-rendering-lists";
+import Setup from "./subtopics/6-conditional-rendering/1-to-do-list";
 
 function App() {
   return (
