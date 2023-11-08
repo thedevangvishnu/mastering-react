@@ -4,7 +4,7 @@ import { reviews } from "../../assets/reviews";
 
 const SectionContent = () => {
   return (
-    <div className="md:w-full md:h-screen relative flex flex-col gap-10  xs:px-4 md:px-12 lg:px-32 py-16 font-display">
+    <div className="md:w-full md:h-screen relative flex flex-col gap-8  xs:px-4 md:px-12 lg:px-32 py-10 font-display">
       {/* upper section */}
       <div className="w-full xs:flex-col xs:gap-6 md:gap-0 lg:gap-2 xs:items-center flex md:flex-row">
         {/* upper left */}
@@ -29,8 +29,12 @@ const SectionContent = () => {
 
       {/* lower section */}
       <div className="xs:flex-col xs:items-center xs:pb-8 md:pb-0 flex md:flex-row xs:gap-8 md:gap-4 xl:gap-10 w-full">
-        {reviews.map((reviewItem) => (
-          <ReviewCard key={reviewItem.id} reviewItem={reviewItem} />
+        {reviews.map((reviewItem, index) => (
+          <ReviewCard
+            key={reviewItem.id}
+            reviewItem={reviewItem}
+            itemPosition={index}
+          />
         ))}
       </div>
     </div>
