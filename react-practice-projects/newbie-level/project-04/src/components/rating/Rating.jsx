@@ -4,16 +4,16 @@ import { useState, useEffect } from "react";
 const defaultMargin = { marginLeft: "0px" };
 
 const Rating = ({ margin }) => {
-  const [marginLeft, setMarginLeft] = useState(defaultMargin);
+  const [marginStyle, setMarginStyle] = useState({ marginLeft: `${margin}px` });
 
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
 
-      if (screenWidth >= 768) {
-        setMarginLeft({ marginLeft: `${margin}px` });
+      if (screenWidth <= 768) {
+        setMarginStyle(defaultMargin);
       } else {
-        setMarginLeft(defaultMargin);
+        setMarginStyle({ marginLeft: `${margin}px` });
       }
     };
 
@@ -29,7 +29,7 @@ const Rating = ({ margin }) => {
   return (
     <div
       className={`bg-magenta-100 xs:flex-col flex md:flex-row items-center xs:p-4 md:p-3 relative xs:gap-2 md:gap-4 lg:gap-6 xl:gap-10 xs:w-full md:w-3/4 rounded-md`}
-      style={marginLeft}
+      style={marginStyle}
     >
       <div className="flex items-center gap-1 h-full">
         {Array(5)
