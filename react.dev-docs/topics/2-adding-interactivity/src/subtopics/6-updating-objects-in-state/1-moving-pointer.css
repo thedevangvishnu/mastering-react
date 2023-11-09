@@ -1,0 +1,11 @@
+body {
+  padding: 0;
+}
+
+h1 {
+  color: #ddd;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 7rem);
+  z-index: 2;
+}
