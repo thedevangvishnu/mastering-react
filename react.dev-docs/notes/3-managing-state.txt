@@ -33,3 +33,35 @@ Five step procedure:
     - remove those state variables whose value are just inverse of another state variable. Use one of them only.
 - Connect the event handlers to state setter funtions for their respective state variables. 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+2 - Sharing state between components
+
+2.1 - How to share state between same level components
+
+    - Sometimes, components need to share state, meaning they should update and change together.
+    - Till now, we have just learned that each component has their own state and they update 
+    individually. Similar components do no communicate with each other.
+
+
+In order for components to communicate with each other, we need to lift state up, meaning, remove each individual state from the respective components and add the state to their closest common parent component and then pass them as props to their child components. 
+
+    - Remove state from child components.
+    - Pass hard coded data to child components as props.
+    - Add a state to the closest common parent component. 
+
+2.2 - Controlled and uncontrolled components
+
+2.2.1 - Uncontrolled components
+
+        - Components that have their independent state and that cannot be controlled by their parent. 
+        - The important information in these components are driven by their local state and not props.
+
+2.2.2 - Controlled components
+
+        - Components in which important information is controlled by their closest common parent through props.
+        - These components generally do not have their independent states.
+
+Though "controlled and uncontrolled inputs" are not legit-technical concepts. These are more "ways of thinking about components."
+
+
