@@ -132,3 +132,35 @@ input::placeholder {
   background-color: rgb(250, 34, 34);
   border-radius: 50%;
 }
+
+/* 3 - sharing state between components */
+
+.panel {
+  width: 320px;
+  height: auto;
+  padding: 1rem;
+  border: 1px solid #555;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.accordion__app {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.all__panels {
+  display: flex;
+  gap: 2rem;
+}
