@@ -152,11 +152,13 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  height: 300px;
 }
 
 .accordion__app {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 4rem;
 }
 
