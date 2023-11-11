@@ -9,11 +9,11 @@ export const foods = [
   },
   {
     id: 1,
-    name: "Dal",
+    name: "Biryani",
     imageUrl:
-      "https://st4.depositphotos.com/3823309/37970/i/380/depositphotos_379709004-stock-photo-dal-makhani-dark-background-dal.jpg",
+      "https://st2.depositphotos.com/5653638/11431/i/380/depositphotos_114311142-stock-photo-basmati-rice-slowly-cooked-with.jpg",
     description:
-      "The most common way of preparing dal is in the form of a soup to which onions, tomatoes and various spices may be added",
+      "Biryani is a mixed rice dish originating among the Muslims of South Asia. It is made with rice, some type of meat and spices.",
   },
   {
     id: 2,

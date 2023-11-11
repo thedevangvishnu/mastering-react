@@ -166,3 +166,32 @@ input::placeholder {
   display: flex;
   gap: 2rem;
 }
+
+/* filtering list */
+
+/* list items */
+
+.list__item__container {
+  width: 360px;
+  height: 400px;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.list__item__container img {
+  width: 300px;
+  height: 300px;
+}
+
+/* list */
+.list__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}

@@ -1,7 +1,7 @@
 const ListItem = ({ item }) => {
   const { name, imageUrl, description } = item;
   return (
-    <div>
+    <div className="list__item__container">
       <img src={imageUrl} alt={`${name}'s pic`} />
       <div>
         <h3>{name}</h3>
