@@ -3,7 +3,7 @@ const ListItem = ({ item }) => {
   return (
     <div className="list__item__container">
       <img src={imageUrl} alt={`${name}'s pic`} />
-      <div>
+      <div className="list__item__content">
         <h3>{name}</h3>
         <p>{description}</p>
       </div>
