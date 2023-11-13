@@ -18,7 +18,7 @@ const Input = ({ label, icon, error }) => {
           <img src={icon} alt={`Icon of ${icon}`} />
         </div>
         <input
-          className="bg-transparent text-right w-full"
+          className="bg-transparent text-right w-full outline-none pr-2"
           type="number"
           value={value}
           onChange={handleChange}
