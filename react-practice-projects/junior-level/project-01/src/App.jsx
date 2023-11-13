@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Input from "./components/Input";
+import userIcon from "./assets/images/icon-person.svg";
 
 const App = () => {
   const [bill, setBill] = useState(0);
@@ -16,7 +18,8 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2 w-1/2 mx-auto py-3 items-center">
+    <div className="font-display flex flex-col gap-2 w-1/2 mx-auto py-3 items-center">
+      <Input label="name" icon={userIcon} />
       <label htmlFor="">Bill</label>
       <input
         className="border-2 border-slate-600 p-2"

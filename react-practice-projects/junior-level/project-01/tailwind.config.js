@@ -7,7 +7,7 @@ module.exports = {
         xs: "325px",
       },
       colors: {
-        cyan: {
+        customCyan: {
           50: "hsl(0, 0%, 100%)",
           100: "hsl(189, 41%, 97%)",
           200: "hsl(185, 41%, 84%)",
