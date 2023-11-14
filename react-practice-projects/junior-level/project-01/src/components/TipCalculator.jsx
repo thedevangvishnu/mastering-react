@@ -10,10 +10,15 @@ const TipCalculator = () => {
   const [numberOfPeople, setNumberOfPeople] = useState(0);
   const [tip, setTip] = useState(0);
   const [total, setTotal] = useState(0);
+  const [error, setError] = useState("");
 
   const tipOptions = [5, 10, 15, 25, 50, "Custom"];
 
   const calculateTip = (e) => {
+    if (numberOfPeople === 0) {
+      setError("Can't be zero");
+      return;
+    }
     const tipPercent = parseInt(e.target.textContent.replace("%", ""));
     // console.log(tipPercent);
     const tipAmountPerPerson = (bill * (tipPercent / 100)) / numberOfPeople;
@@ -44,7 +49,7 @@ const TipCalculator = () => {
           <p className="text-xs">Select tip %</p>
           <div className="grid grid-cols-3 gap-2">
             {tipOptions.map((tip) => (
-              <TipButton tip={tip} onSmash={calculateTip} />
+              <TipButton key={tip} tip={tip} onSmash={calculateTip} />
             ))}
           </div>
         </div>
@@ -54,6 +59,7 @@ const TipCalculator = () => {
           icon={userIcon}
           inputValue={numberOfPeople}
           onInputChange={(e) => setNumberOfPeople(e.target.value)}
+          errorMsg={error}
         />
       </div>
 
@@ -64,7 +70,7 @@ const TipCalculator = () => {
           <ResultItem label="Total" amount={total} />
         </div>
         <button
-          className="bg-customCyan-600 text-customCyan-500 w-full mt-auto py-1.5 font-bold rounded-md"
+          className="bg-customCyan-600 text-customCyan-500 w-full mt-auto py-1.5 font-bold rounded-md focus:bg-customCyan-200"
           onClick={resetCalculator}
         >
           RESET
