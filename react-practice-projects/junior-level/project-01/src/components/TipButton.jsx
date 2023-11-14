@@ -1,4 +1,4 @@
-const TipButton = ({ tip }) => {
+const TipButton = ({ tip, onSmash }) => {
   if (tip === "Custom") {
     return (
       <button className="bg-customCyan-100 text-customCyan-400 rounded-md py-1.5 px-2 w-full text-medium font-bold">
@@ -7,7 +7,10 @@ const TipButton = ({ tip }) => {
     );
   }
   return (
-    <button className="bg-customCyan-500 rounded-md py-1.5 px-2 w-full text-medium text-customCyan-50 font-bold">
+    <button
+      className="bg-customCyan-500 rounded-md py-1.5 px-2 w-full text-medium text-customCyan-50 font-bold"
+      onClick={onSmash}
+    >
       {tip}%
     </button>
   );

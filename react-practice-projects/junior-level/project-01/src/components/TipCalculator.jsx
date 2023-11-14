@@ -15,37 +15,58 @@ const TipCalculator = () => {
 
   const calculateTip = (e) => {
     const tipPercent = parseInt(e.target.textContent.replace("%", ""));
-
+    // console.log(tipPercent);
     const tipAmountPerPerson = (bill * (tipPercent / 100)) / numberOfPeople;
-    setTip(tipAmountPerPerson);
+    setTip(tipAmountPerPerson.toFixed(2));
     const totalAmountPerPerson = bill / numberOfPeople + tipAmountPerPerson;
-    setTotal(totalAmountPerPerson);
+    setTotal(totalAmountPerPerson.toFixed(2));
   };
+
+  const resetCalculator = () => {
+    setBill(0);
+    setNumberOfPeople(0);
+    setTip(0);
+    setTotal(0);
+  };
+
   return (
     <div className="w-[680px] h-[320px] bg-customCyan-50 rounded-xl shadow-xl p-5 flex gap-9">
       {/* left section */}
       <div className="w-1/2 flex flex-col gap-6 py-2 pl-4">
-        <Input label="Bill" icon={dollarIcon} />
+        <Input
+          label="Bill"
+          icon={dollarIcon}
+          inputValue={bill}
+          onInputChange={(e) => setBill(e.target.value)}
+        />
 
         <div className="flex flex-col gap-2">
           <p className="text-xs">Select tip %</p>
           <div className="grid grid-cols-3 gap-2">
-            {tipOptions.map((option) => (
-              <TipButton tip={option} />
+            {tipOptions.map((tip) => (
+              <TipButton tip={tip} onSmash={calculateTip} />
             ))}
           </div>
         </div>
 
-        <Input label="Number of People" icon={userIcon} />
+        <Input
+          label="Number of People"
+          icon={userIcon}
+          inputValue={numberOfPeople}
+          onInputChange={(e) => setNumberOfPeople(e.target.value)}
+        />
       </div>
 
       {/* right section */}
       <div className="w-1/2 h-full bg-customCyan-500 rounded-xl px-8 py-6 flex flex-col">
         <div className="flex flex-col gap-8 mt-3">
-          <ResultItem label="Tip Amount" amount="5" />
-          <ResultItem label="Total" amount="50" />
+          <ResultItem label="Tip Amount" amount={tip} />
+          <ResultItem label="Total" amount={total} />
         </div>
-        <button className="bg-customCyan-600 text-customCyan-500 w-full mt-auto py-1.5 font-bold rounded-md">
+        <button
+          className="bg-customCyan-600 text-customCyan-500 w-full mt-auto py-1.5 font-bold rounded-md"
+          onClick={resetCalculator}
+        >
           RESET
         </button>
       </div>

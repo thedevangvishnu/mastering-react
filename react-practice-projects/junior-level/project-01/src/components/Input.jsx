@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Input = ({ label, icon, error }) => {
+const Input = ({ label, icon, inputValue, onInputChange, error }) => {
   const [value, setValue] = useState(0);
   const [errorMsg, setErrorMsg] = useState("");
   const handleChange = (e) => {
@@ -20,8 +20,8 @@ const Input = ({ label, icon, error }) => {
         <input
           className="bg-transparent text-right w-full outline-none pr-2"
           type="number"
-          value={value}
-          onChange={handleChange}
+          value={inputValue}
+          onChange={onInputChange}
         />
       </div>
       <p>{errorMsg}</p>
