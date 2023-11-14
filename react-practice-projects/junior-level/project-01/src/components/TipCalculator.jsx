@@ -10,6 +10,8 @@ const TipCalculator = () => {
   const [tip, setTip] = useState(0);
   const [total, setTotal] = useState(0);
 
+  const tipOptions = [5, 10, 15, 25, 50, "Custom"];
+
   const calculateTip = (e) => {
     const tipPercent = parseInt(e.target.textContent.replace("%", ""));
 
@@ -19,10 +21,21 @@ const TipCalculator = () => {
     setTotal(totalAmountPerPerson);
   };
   return (
-    <div className="w-3/4 h-2/3 bg-customCyan-50 rounded-xl shadow-xl p-6 flex gap-4">
+    <div className="w-[680px] h-[320px] bg-customCyan-50 rounded-xl shadow-xl p-5 flex gap-9">
       {/* left section */}
-      <div className="w-1/2">
+      <div className="w-1/2 flex flex-col gap-6 py-2 pl-4">
         <Input label="Bill" icon={dollarIcon} />
+
+        <div className="flex flex-col gap-2">
+          <p className="text-xs">Select tip %</p>
+          <div className="grid grid-cols-3 gap-2">
+            {tipOptions.map((option) => (
+              <TipButton tip={option} />
+            ))}
+          </div>
+        </div>
+
+        <Input label="Number of People" icon={userIcon} />
       </div>
 
       {/* right section */}
