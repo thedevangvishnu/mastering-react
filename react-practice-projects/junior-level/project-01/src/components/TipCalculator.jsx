@@ -3,6 +3,7 @@ import Input from "./Input";
 import TipButton from "./TipButton";
 import userIcon from "../assets/images/icon-person.svg";
 import dollarIcon from "../assets/images/icon-dollar.svg";
+import ResultItem from "./ResultItem";
 
 const TipCalculator = () => {
   const [bill, setBill] = useState(0);
@@ -39,7 +40,15 @@ const TipCalculator = () => {
       </div>
 
       {/* right section */}
-      <div className="w-1/2 h-full bg-customCyan-500 rounded-xl"></div>
+      <div className="w-1/2 h-full bg-customCyan-500 rounded-xl px-8 py-6 flex flex-col">
+        <div className="flex flex-col gap-8 mt-3">
+          <ResultItem label="Tip Amount" amount="5" />
+          <ResultItem label="Total" amount="50" />
+        </div>
+        <button className="bg-customCyan-600 text-customCyan-500 w-full mt-auto py-1.5 font-bold rounded-md">
+          RESET
+        </button>
+      </div>
     </div>
   );
 };
