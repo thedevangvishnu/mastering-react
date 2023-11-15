@@ -32,7 +32,7 @@ const Input = ({ label, icon, inputValue, onInputChange, errorMsg }) => {
           hasError === true && label === "Number of People"
             ? "border-red-600 border-[1px] border-solid"
             : ""
-        }`}
+        } `}
       >
         <div className="w-2 flex items-center justify-center">
           <img src={icon} alt={`Icon of ${icon}`} />

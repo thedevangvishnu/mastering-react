@@ -35,9 +35,9 @@ const TipCalculator = () => {
   };
 
   return (
-    <div className="w-[680px] h-[320px] bg-customCyan-50 rounded-xl shadow-xl p-5 flex gap-9">
+    <div className="xs:w-full xs:h-full sm:w-[680px] sm:h-[320px] bg-customCyan-50 rounded-xl shadow-xl xs:px-8 sm:p-5 flex xs:flex-col xs:items-center sm:flex-row gap-9">
       {/* left section */}
-      <div className="w-1/2 flex flex-col gap-6 py-2 pl-4">
+      <div className="xs:w-full sm:w-1/2 flex flex-col gap-6 py-2 xs:pl-0 sm:pl-4">
         <Input
           label="Bill"
           icon={dollarIcon}
@@ -64,8 +64,8 @@ const TipCalculator = () => {
       </div>
 
       {/* right section */}
-      <div className="w-1/2 h-full bg-customCyan-500 rounded-xl px-8 py-6 flex flex-col">
-        <div className="flex flex-col gap-8 mt-3">
+      <div className="xs:w-full sm:w-1/2 h-full bg-customCyan-500 rounded-xl px-8 py-6 flex flex-col xs:gap-8 sm:gap-0">
+        <div className="flex flex-col xs:gap-4 sm:gap-8 mt-3">
           <ResultItem label="Tip Amount" amount={tip} />
           <ResultItem label="Total" amount={total} />
         </div>
