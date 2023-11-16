@@ -1,5 +1,5 @@
 import "./App.css";
-import Setup from "./subtopics/6-updating-objects-in-state/1-moving-pointer";
+import Setup from "./subtopics/4-state-as-a-snapshot/4-traffic-light";
 
 function App() {
   return (
