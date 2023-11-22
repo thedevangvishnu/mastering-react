@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import PricingList from "./PricingList";
+import { pricingData } from "../assets/pricingData";
 
 const PricingSection = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -8,7 +10,7 @@ const PricingSection = () => {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center p-8 gap-4">
+    <div className="w-full h-screen flex flex-col items-center justify-center p-8 gap-4 bg-grayishBlue-100">
       <h2>Our Pricing</h2>
       <div className="flex items-center gap-3">
         <p
@@ -37,7 +39,10 @@ const PricingSection = () => {
           Monthly
         </p>
       </div>
-      <div>{/* all pricing items */}</div>
+      <div>
+        {/* all pricing items */}
+        <PricingList subscription={pricingData.monthly} />
+      </div>
     </div>
   );
 };
