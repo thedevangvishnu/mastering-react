@@ -1,10 +1,10 @@
 import "./App.css";
-import ClassMouse from "./components/02-useEffect/04-ClassComp";
+import ClassFetchData from "./components/02-useEffect/06-CC";
 
 function App() {
   return (
     <>
-      <ClassMouse />
+      <ClassFetchData />
     </>
   );
 }
