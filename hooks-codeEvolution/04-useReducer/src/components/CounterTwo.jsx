@@ -27,6 +27,11 @@ const reducer = (currentState, action) => {
         ...currentState,
         secondCounter: currentState.secondCounter - action.value,
       };
+
+    case "reset":
+      return initialState;
+    default:
+      return currentState;
   }
 };
 
@@ -54,6 +59,13 @@ const CounterTwo = () => {
           INCREMENT +5
         </button>
       </div>
+
+      <button
+        style={{ marginTop: "6rem" }}
+        onClick={() => dispatch({ type: "reset" })}
+      >
+        RESET BOTH
+      </button>
     </div>
   );
 };
