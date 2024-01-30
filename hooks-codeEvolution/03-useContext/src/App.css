@@ -40,3 +40,53 @@
 .read-the-docs {
   color: #888;
 }
+
+.checkbox,
+.checkbox input,
+.checkbox label {
+  cursor: pointer;
+}
+
+.panel {
+  width: 500px;
+  height: 240px;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.button-comps {
+  margin-top: 2rem;
+}
+
+.warning {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.light-mode {
+  background-color: #ddd;
+  color: #222;
+}
+
+.btn-light-mode {
+  background-color: #aaa;
+  color: #111;
+}
+
+.login-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.login-form-light-mode input {
+  background-color: #fcfcfc;
+  border: 1px solid #aaa;
+}
+
+.login-form input {
+  padding: 0.5rem;
+}
