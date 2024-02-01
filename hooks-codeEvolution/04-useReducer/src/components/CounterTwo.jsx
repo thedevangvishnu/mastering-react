@@ -1,3 +1,5 @@
+// Create two counter using the same useReducer() and using their state and action objects
+
 import React, { useReducer } from "react";
 
 const initialState = {
